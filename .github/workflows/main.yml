@@ -67,7 +67,9 @@ jobs:
     
     - name: Check formatting
       run: cargo fmt -- --check
+      
+    - name: Upload artifact
     - uses: actions/upload-artifact@v2
       with:
-        name: Build
+        name: ${{ env.name }} build
         path: target/release/
